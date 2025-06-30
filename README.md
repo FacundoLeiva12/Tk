@@ -1,0 +1,1 @@
+Realizamos un asistente de tiempo hecho en Python con Tkinter, que combina funcionalidades de reloj, calendario y administración de tareas en una sola aplicación simple y funcional. Integrantes: Esteban González, Facundo Leiva

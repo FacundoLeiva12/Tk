@@ -16,7 +16,7 @@ class Anotador:
  
 
     def create_menu(self):
-        # Menu principal
+        # Menu principal....
         menu_principal = tk.Menu(self.root)
         self.root.config(menu=menu_principal)
 

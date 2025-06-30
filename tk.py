@@ -94,11 +94,11 @@ class Anotador:
     
     def nuevo_archivo(self):
         if len(self.text_area.get("1.0", tk.END).strip()) > 0:
-             respuesta = messagebox.askyesno(
+            respuesta = messagebox.askyesno(
                 "Seguro",
                 "Hay texto sin guardar ¿Seguro quieres crear una nota nueva?")
-             if not respuesta:
-                 return
+            if not respuesta:
+                return
         
         self.text_area.delete("1.0", tk.END)
         self.root.title("Nota nueva - Anotador")
@@ -115,14 +115,15 @@ class Anotador:
             return
         
         try:
-            with open(ruta_archivo, "w", encoding="utgf-8") as archivo:
+            with open(ruta_archivo, "w", encoding="utf-8") as archivo:
                 guardar_texto = self.text_area.get("1.0", tk.END)
                 archivo.write(guardar_texto)
-                
-                self.root.title(f"Guardado: {ruta_archivo} -  Anotador")
-                messagebox.showinfo("La nota se ha guardado correctamente 😎👍")
+            
+            self.root.title(f"Guardado: {ruta_archivo} -  Anotador")
+            messagebox.showinfo("Exitoso","La nota se ha guardado correctamente 😎👍")
+        
         except Exception as e:
-            messagebox.showerror("OH 😵, ocurrio un error al guardar el archivo", f"El archivo. \nError: {e}")
+            messagebox.showerror("Error", f"El archivo.\nError: {e} 😭")
 
 if __name__ == "__main__":
     root = tk.Tk()
